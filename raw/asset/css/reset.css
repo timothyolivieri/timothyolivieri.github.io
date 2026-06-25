@@ -8,7 +8,7 @@
         content: attr(data-before);
     }
 
-    body:not([data-uid]) .-isauth, body[data-uid] .-noauth.
+    body:not([data-uid]) .-isauth, body[data-uid] .-noauth,
     body:not([auth]) [auth="true"], body[auth] [auth="false"] {
         display: none;
     }
