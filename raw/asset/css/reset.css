@@ -544,7 +544,8 @@
         opacity: 0.5;
     }
 
-    body [data-hide]:not([data-active="true"]), body [data-page]:not([data-active="true"]):not(.-active), body [data-pages]:not([data-active="true"]):not(.-active), body [data-path]:not([data-active="true"]):not(.-active) {
+    body [data-hide]:not([data-active="true"]), body [data-page]:not([data-active="true"]):not(.-active), body [data-pages]:not([data-active="true"]):not(.-active), body [data-path]:not([data-active="true"]):not(.-active),
+    body [data-hide]:not([data-active="true"]), body [route]:not([data-active="true"]):not(.active), body [data-pages]:not([data-active="true"]):not(.active), body [route]:not([data-active="true"]):not(.active) {
         display: none;
     }
 }
