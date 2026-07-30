@@ -154,6 +154,7 @@
 
     block > section, card > section, box > section {
         display: flex;
+        flex: 1;
     }
 
     header > picture, nav > picture, footer > picture, block > picture, card > picture, box > picture {
