@@ -152,6 +152,10 @@
         position: relative;
     }
 
+    block > section, card > section, box > section {
+        display: flex;
+    }
+
     header > picture, nav > picture, footer > picture, block > picture, card > picture, box > picture {
         position: absolute;
         top: 0;
