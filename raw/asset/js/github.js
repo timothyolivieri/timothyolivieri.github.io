@@ -324,7 +324,7 @@ github.gists.list = async function(query) {
             console.log(error);
             resolve(error);
         }
-        const accessToken = localStorage.githubAccessToken;
+        const accessToken = localStorage['github-token'];
         const settings = accessToken ? {
             headers: {
                 Accept: "application/vnd.github+json",
