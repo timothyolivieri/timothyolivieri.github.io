@@ -52,7 +52,7 @@ window.github = {
             localStorage.removeItem('user');
         },
         user: async(target)=>{
-            if (localStorage.user) {
+            if (localStorage.getItem('github-token')) {
                 try {
                     var user = await github.users.user(localStorage.getItem('github-token'))
                 } catch (e) {
