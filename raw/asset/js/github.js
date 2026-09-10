@@ -54,7 +54,7 @@ window.github = {
         user: async(target)=>{
             if (localStorage.user) {
                 try {
-                    var user = await github.users.user(localStorage.user)
+                    var user = await github.users.user(localStorage.getItem('github-token'))
                 } catch (e) {
                     console.log(e);
                     var user = null;
