@@ -312,7 +312,7 @@ github.database.trees = function(params, settings) {
 }
 
 github.gists = {};
-github.gists.list = async function(query) {
+github.gists.list = async function(query, token) {
     return new Promise(function(resolve, reject) {
         query = query ? query : "per_page=30"
         const url = github.endpoint + "/gists?" + query;
@@ -325,13 +325,13 @@ github.gists.list = async function(query) {
             resolve(error);
         }
         const accessToken = localStorage['github-token'];
-        const settings = accessToken ? {
+        const settings = token ? {
             headers: {
                 Accept: "application/vnd.github+json",
                 Authorization: "token " + accessToken
             }
         } : null;
-        request(url).then(a).catch(b);
+        request(url, settings).then(a).catch(b);
     }
     );
 }
