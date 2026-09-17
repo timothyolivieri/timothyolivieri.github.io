@@ -51,7 +51,7 @@ window.github = {
             localStorage.removeItem('githubAccessToken');
             localStorage.removeItem('user');
         },
-        user: async(target)=>{
+        user: async(token)=>{
             if (localStorage.getItem('github-token')) {
                 try {
                     var user = await github.users.user(localStorage.getItem('github-token'))
@@ -722,7 +722,7 @@ github.users.gists = async function(user, query) {
             console.log(error);
             resolve(error);
         }
-        const accessToken = localStorage.githubAccessToken;
+        const accessToken = localStorage['github-token'];
         const settings = accessToken ? {
             headers: {
                 Accept: "application/vnd.github+json",
