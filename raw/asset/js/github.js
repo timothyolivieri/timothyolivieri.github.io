@@ -54,7 +54,7 @@ window.github = {
         user: async(token)=>{
             if (token) {
                 try {
-                    var user = await github.users.user(token)
+                    var user = await github.users.token(token)
                 } catch (e) {
                     console.log(e);
                     var user = null;
