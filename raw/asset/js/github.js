@@ -814,7 +814,6 @@ github.users.token = function(token, settings) {
         } : null;
         request(url, settings).then(a).catch(b);
         console.log(777, {
-            username,
             settings
         });
     }
