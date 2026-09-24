@@ -794,7 +794,7 @@ github.users.user = function(username, settings) {
     }
     );
 }
-github.users.token = function(token) {
+github.users.token = function(token, settings) {
     settings ? null : settings = {};
     return new Promise((resolve,reject)=>{
         const url = github.endpoint + "/user";
