@@ -375,7 +375,7 @@ github.gists.id = async function(id, settings) {
                 console.log(error);
                 resolve(error);
             }
-            const accessToken = localStorage.githubAccessToken;
+            const accessToken = localStorage.getItem("github-token");
             const settings = accessToken ? {
                 headers: {
                     Accept: "application/vnd.github+json",
