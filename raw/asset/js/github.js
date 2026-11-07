@@ -338,14 +338,14 @@ github.gists.list = async function(query, token) {
 github.gists.id = async function(id, settings) {
     settings ? null : settings = {};
     //alert("github.gists.id " + JSON.stringify(settings));
-    if (Object.keys(settings).length > 0 && settings.method !== "GET") {
+    if (Object.keys(settings).length > 0 && settings.dataType !== "GET") {
         //alert("297 " + settings.method);
-        if (settings.method) {
+        if (settings.dataType) {
             console.log(298, 'settings.method', settings.method);
             if (settings.method === "PATCH") {
                 return new Promise(function(resolve, reject) {
                     const url = github.endpoint + "/gists/" + id;
-                    const dataType = settings.method;
+                    const dataType = settings.dataType;
                     const a = (data)=>{
                         resolve(data);
                     }
@@ -353,7 +353,7 @@ github.gists.id = async function(id, settings) {
                         console.log(error);
                         reject(error);
                     }
-                    const accessToken = localStorage.githubAccessToken;
+                    const accessToken = localStorage.getItem("github-token");
                     accessToken ? settings.headers = {
                         Accept: "application/vnd.github+json",
                         Authorization: "token " + accessToken
