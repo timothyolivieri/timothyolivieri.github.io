@@ -341,8 +341,8 @@ github.gists.id = async function(id, settings) {
     if (Object.keys(settings).length > 0 && settings.dataType !== "GET") {
         //alert("297 " + settings.method);
         if (settings.dataType) {
-            console.log(298, 'settings.method', settings.method);
-            if (settings.method === "PATCH") {
+            console.log(298, 'settings.method', settings.dataType);
+            if (settings.dataType === "PATCH") {
                 return new Promise(function(resolve, reject) {
                     const url = github.endpoint + "/gists/" + id;
                     const dataType = settings.dataType;
