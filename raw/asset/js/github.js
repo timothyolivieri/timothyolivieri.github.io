@@ -338,14 +338,14 @@ github.gists.list = async function(query, token) {
 github.gists.id = async function(id, settings) {
     settings ? null : settings = {};
     //alert("github.gists.id " + JSON.stringify(settings));
-    if (Object.keys(settings).length > 0 && settings.dataType !== "GET") {
+    if (Object.keys(settings).length > 0 && settings.method !== "GET") {
         //alert("297 " + settings.method);
-        if (settings.dataType) {
-            console.log(298, 'settings.method', settings.dataType);
-            if (settings.dataType === "PATCH") {
+        if (settings.method) {
+            console.log(298, 'settings.method', settings.method);
+            if (settings.method === "PATCH") {
                 return new Promise(function(resolve, reject) {
                     const url = github.endpoint + "/gists/" + id;
-                    const dataType = settings.dataType;
+                    const dataType = settings.method;
                     const a = (data)=>{
                         resolve(data);
                     }
