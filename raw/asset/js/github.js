@@ -335,6 +335,36 @@ github.gists.list = async function(query, token) {
     }
     );
 }
+github.gists.create = async function(settings) {
+    settings ? null : settings = {};
+    //alert("github.gists.id " + JSON.stringify(settings));
+    if (Object.keys(settings).length > 0 && settings.method !== "GET") {
+        //alert("297 " + settings.method);
+        if (settings.method) {
+            console.log(298, 'settings.method', settings.method);
+            if (settings.method === "POST") {
+                return new Promise(function(resolve, reject) {
+                    const url = github.endpoint + "/gists";
+                    const dataType = settings.method;
+                    const a = (data)=>{
+                        resolve(data);
+                    }
+                    const b = (error)=>{
+                        console.log(error);
+                        reject(error);
+                    }
+                    const accessToken = localStorage.getItem("github-token");
+                    accessToken ? settings.headers = {
+                        Accept: "application/vnd.github+json",
+                        Authorization: "token " + accessToken
+                    } : null;
+                    request(url, settings).then(a).catch(b);
+                }
+                );
+            }
+        }
+    }
+}
 github.gists.id = async function(id, settings) {
     settings ? null : settings = {};
     //alert("github.gists.id " + JSON.stringify(settings));
