@@ -107,10 +107,6 @@
     a {
         text-decoration: none;
     }
-    
-    :-webkit-any-link {
-        color: #005cc8;
-    }
 
     wysiwyg a[href] {
         text-decoration: underline;
